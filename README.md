@@ -40,17 +40,17 @@ This solution consists of a Model-driven Power App, a Power BI Dashboard, and va
 	1. Open the COVID Market Impact Tools solution
 	2. At the right side of the Command Bar, select Model-driven App in the drop-down menu to filter the list
 	3. Select the "Impact Assessment App" component to open the App Designer, and click "Play" to run the Model-driven App
-	4. From the Impact Assessment App, click "Sales Territories" under the Configuration section of the site map on the left side of the screen
+	4. From the Impact Assessment App, click "Sales Territories" under the Reference section of the site map on the left side of the screen
 		a. Click "Import from Excel"
 		b. Click "Choose File" then navigate to and select the "Impact Assessment - Sales Territories (Sample).xlsx" downloaded previously
 		c. Proceed through the wizard and select "Finish Import" to initiate the import
 		d. After a few seconds, refresh to find three sample Sales Territories present in the "Active Sales Territories" view
-	5. Click "Industries" under the Configuration section of the site map on the left side of the screen
+	5. Click "Industries" under the Reference section of the site map on the left side of the screen
 		a. Click "Import from Excel"
 		b. Click "Choose File" then navigate to and select the "Impact Assessment - Industries (Sample).xlsx" downloaded previously
 		c. Proceed through the wizard and select "Finish Import" to initiate the import
 		d. After a few seconds, refresh to find three sample Industries present in the "Active Industries" view
-	6. Click "Business Segments" under the Configuration section of the site map on the left side of the screen
+	6. Click "Business Segments" under the Reference section of the site map on the left side of the screen
 		a. Click "Import from Excel"
 		b. Click "Choose File" then navigate to and select the "Impact Assessment - Business Segments (Sample).xlsx" downloaded previously
 		c. Proceed through the wizard and select "Finish Import" to initiate the import
@@ -62,32 +62,34 @@ This solution consists of a Model-driven Power App, a Power BI Dashboard, and va
 		d. After a few seconds, refresh to find 27 sample Accounts present in the "Accounts (Impact Assessment)" view
 
 ## Deploy Power BI Dashboard
-	1. Open the previously downloaded "COVID Tracker.pbix" in Power BI Desktop
-	2. Click on Transform to go to the Power Query Editor
-	3. On the Left under queries click on Account
+	1. Copy your Org URL: From anywhere in the Impact Assessment App copy the first portion of the URL from "https://" to ".com/"
+		○ Example: https://mycdsorg.crm.dynamics.com/
+	2. Open the previously downloaded "COVID Tracker.pbix" in Power BI Desktop
+	3. Click on Transform to go to the Power Query Editor
+	4. On the Left under queries click on Account
 		a. On the right under Applied Steps click on the gear to the right of “Source”
 		b. Within the dialog window:
-			i. Paste org URL into the Server URL text box
+			i. Paste the previously copied Org URL into the Server URL text box
 			ii. Click OK
 		c. You will be asked to sign in, sign in with appropriate account
 		d. Click the Connect button after you have been authenticated
 		e. After a few seconds, you should see the data grid come up, indicating that the Account query has been configured
 		f. Click on the last item in the "Applied Steps" list to see the transformed Account dataset and confirm that the previously imported Sample Data is visible
-	4. Click on BusinessSegment repeat the same steps with this query, you will not be asked to sign in again, just click Ok to connect
+	5. Click on BusinessSegment repeat the same steps with this query, you will not be asked to sign in again, just click Ok to connect
 		a. Click on the last item in the "Applied Steps" list to see the transformed Business Segment dataset and confirm that the previously imported Sample Data is visible
-	5. Repeat process for Industry, click OK to Connect
-	6. Click on the COVID19 query
+	6. Repeat process for Industry, click OK to Connect
+	7. Click on the COVID19 query
 		a. Click on the gear Icon next to Source under the Applied Steps
 		b. You will be shown a dialog “Comma-Separated Values” with a URL and other options. Leave them as they are, and click OK
 		c. The Next dialog is the “Access Web Content”, you will be accessing this URL anonymously, click the Connect button. 
 			i. The Yellow warning sign should disappear from the COVID19 query after navigating to another query and back
-	7. Click Close & Apply in the upper Left-Hand side of the Power Query Editor to return to the Power BI Desktop Canvas with the COVID-19 Tracker Report
-	8. Click on Refresh Data Icon to refresh the report
-	9. Once the refresh completes, click on the Publish icon to publish the report to your Power BI Workspace
+	8. Click Close & Apply in the upper Left-Hand side of the Power Query Editor to return to the Power BI Desktop Canvas with the COVID-19 Tracker Report
+	9. Click on Refresh Data Icon to refresh the report
+	10. Once the refresh completes, click on the Publish icon to publish the report to your Power BI Workspace
 		a. Sign into Power BI as required to complete the publishing process
 		b. You will need to select an appropriate workspace, for the purpose of testing, "My Workspace" will suffice
-	10. Once the report has been published, click the “Open COVID Tracker.pbix” link to open the report in the Power BI Web App
-	11. Copy the URL of the Dashboard from your Web Browser for use in the next task
+	11. Once the report has been published, click the “Open COVID Tracker.pbix” link to open the report in the Power BI Web App
+	12. Copy the URL of the Dashboard from your Web Browser for use in the next task
 
 ## Edit Site Map
 	1. With the URL of the previously published Covid Tracker dashboard copied to your clipboard, open the COVID Market Impact Tools solution
@@ -96,21 +98,6 @@ This solution consists of a Model-driven Power App, a Power BI Dashboard, and va
 		a. From the Sitemap Designer, select the "Power BI Dashboard" subarea under the "Overview" group to reveal its properties on the right
 		b. From the Subarea properties pane, paste the previously copied URL into the corresponding text field
 		c. At the top right of the Sitemap Designer, click Save, then Publish, then Save And Close
-
-## Test the Check-in App Configuration Settings
-	• From the Worker Check-In Management App, click "Check-in App" under the Links section of the site map on the left side of the screen
-	• If prompted, click "Allow" to grant Camera permissions  or any others requested by the App
-	• From the Worker Check-In App:
-		○ Select "App Config" and note that the Settings Profile and Location records created earlier are present in the Form
-			§ Click the Home Icon at the top left of the screen to return to the Home Screen
-		○ Select "Camera Config" and note that the previously entered "default Camera Number" is present in the field on the left side
-			§ Use this screen to select the correct (typically forward facing) camera to use in the app, starting with zero, in increments of 1 until the correct camera is found
-			§ Once found, click "Set Default" to update your Settings Profile with this correct Default Camera Number
-				□ After doing so, you can check the Model-driven App to confirm this change went through
-			§ Click the Home Icon at the top left of the screen to return to the Home Screen
-		○ Select "Session Details" note the values for User Settings, Location, and Language Profile to confirm they are set as expected
-			§ Click the Home Icon at the top left of the screen to return to the Home Screen
-		○ Select "Questionnaire" to reveal the Welcome Screen for the Worker Check-In Experience
 
 ## Security-level Testing
 	• Walk-through the various "End-to-End Scenarios" outlined in the previously downloaded Functionality Validation Guide (.docx) using a non admin user account.
