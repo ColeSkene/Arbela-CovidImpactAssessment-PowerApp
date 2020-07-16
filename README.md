@@ -1,7 +1,7 @@
 # Arbela-CovidImpactAssessment-PowerApp
 This solution consists of a Model-driven Power App, a Power BI Dashboard, and various supporting components within the CDS Solution. The solution is designed to be able to stand alone within a CDS Environment without any Dynamics 365 first party apps, or integrate semalessly within an existing Dynamics 365 CE implementation. The Power BI Dashboard exposes CDS data present in your environment and extended through the Model-driven App to highlight Covid Impact data in justoposition with Johns Hopkins Covid Data for the United States.
 
-# Function Demonstration
+# Functional Demonstration
 [![Functional Demonstration Video Link](https://img.youtube.com/vi/LRtbdqHZwYQ/0.jpg)](https://www.youtube.com/watch?v=LRtbdqHZwYQ)
 
 # Installation Instructions
